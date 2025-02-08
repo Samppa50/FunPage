@@ -24,6 +24,13 @@ function Box() {
         setSubmitted(true);
     }
 
+    const handleKeyPress = e => {
+        if (e.key === 'Enter') {
+            handleSubmit();
+        }
+
+    };
+
     return (
         <div 
             className="box"
@@ -38,6 +45,7 @@ function Box() {
                         value={inputValue} 
                         onChange={handleChange} 
                         style={{color: "black"}}
+                        onKeyDown={handleKeyPress}
                     />
                     <button onClick={handleSubmit} className='submit'>Submit</button>
                 </>
